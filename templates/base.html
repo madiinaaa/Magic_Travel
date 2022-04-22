@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"> <!-- Коректное отображение -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/logo3.png') }}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!-- Подключение шрифтов -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}"> <!-- Библиотека нормализации -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/slick.css') }}"> <!-- Библиотека слайдера -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> <!-- Библиотека стилей -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/media.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/jquery.fancybox.min.css') }}"> <!-- Библиотека окон -->
+</head>
+<body>
+<header class="header"> <!-- Шапка сайта -->
+        <div class="header_up"> <!-- Верхняя шапка -->
+            <div class="container"> <!-- Общий контейнер -->
+                <div class="contacts"> <!-- Контакты -->
+                    <a class="header_tele" href="tel:89889933295">8 (988) 933 32 95
+                    <span class="material-icons md-call">call</span></a> <!-- Подключение иконки -->
+                    <a class="header_whats" href="https://api.whatsapp.com/send?phone=79889933295&text=Здравствуйте%21%20Понравился%20ваш%20тур%20в%20...">WhatsApp
+                    <span class="material-icons md-whatsapp">whatsapp</span></a> <!-- Подключение иконки -->
+                    <a class="header_inst" href="https://www.instagram.com/magic_travel.rnd/">Instagram
+                    <span class="material-icons md-photo_camera">photo_camera</span></a> <!-- Подключение иконки -->
+                    <a class="header_vk" href="https://vk.com/magic_travel_rnd/">VK
+                    <span class="material-icons md-groups">groups</span></a>
+                    <a data-fancybox data-src="#form_reg" href="javascript:;" class="header_butt">Забронировать тур
+                    <span class="material-icons md-work">work</span></a> <!-- Подключение иконки -->
+                </div>
+            </div>
+        </div>
+        <div class="header_down"> <!-- Нижняя шапка -->
+            <div class="container"> <!-- Общий контейнер -->
+                <div class="header_down_all"> <!-- Логотип и Меню -->
+                    <div class="header_logo"> <!-- Логотип -->
+                        <a href="#">
+                            <img src="{{ url_for('static', filename='img/logo3.png') }}" alt=""> <!-- Подключение логотипа -->
+                        </a>
+                        <a class="header_text" href="#"><b>ТУРЫ ВЫХОДНОГО ДНЯ</b></a> <!-- Лого-текст -->
+                    </div>
+                    <nav class="menu"> <!-- Меню -->
+                        <ul>
+                            <li><a href="/service">Услуги</a></li>
+                            <li><a href="/about">О нас</a></li>
+                            <li><a href="/">Туры</a></li>
+                            <li><a href="/contact">Связь</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+{% block body %}{% endblock %}
+
+<div id="form_reg"> <!-- Окно с регистрацией -->
+        <form action="..." method="post"> <!-- Подключение к БД -->
+            <div class="form_data_1"> <!-- Класс для заголовков -->
+                <h2>Оставьте свои данные и мы свяжимся с вами!</h2>
+            </div>
+            <div class="form_data_1"> <!-- Класс для заголовков -->
+                <b><p>Выберите, куда хотите отправиться:</p></b>
+            </div>
+            <div class="form_data_2"> <!-- Класс для обычного текста -->
+                <div class="form_radio">
+                    <input type="radio" name="tour_id[]" value="1"> Волшебный Архыз <Br>
+                    <input type="radio" name="tour_id[]" value="2"> Чарующий Крым <Br>
+                    <!--<input type="radio" name="tour_id[]" value="3"> Великолепная Адыгея <Br>
+                    <input type="radio" name="tour_id[]" value="4"> Чудестный Домбай <Br>
+                    <input type="radio" name="tour_id[]" value="5"> Чарующий Краснодар <Br>
+                    <input type="radio" name="tour_id[]" value="6"> Необычный Кисловодск <Br>-->
+                </div>
+            </div>
+            <div class="form_data_1"> <!-- Класс для заголовков -->
+                <b><p>Ваши данные, для связи:</p></b>
+            </div>
+            <div class="form_data_2"> <!-- Класс для обычного текста -->
+                <input type="text" name="fio" placeholder="Ваше имя" size="30"><Br>
+                Необходимо для дальшейшего обращения к вам <Br>
+                <Br>
+                <input type="number" name="tele" placeholder="Телефон"><Br>
+                Необходимо для дальшейшей связи с вами
+            </div>
+            <div class="form_data_1"> <!-- Класс для заголовков -->
+                    <p><input type="submit" class="form_data_btn" value="Забронировать тур!"></p>
+            </div>
+        </form>
+</div>
+
+    <div class="footer_copy"> <!-- Копирайт -->
+        <div class="container"> <!-- Общий контейнер -->
+            <div class="copy_text"> <!-- Текст -->
+                © Туристическая компания "Туры Выходного дня"
+            </div>
+        </div>
+    </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!-- Подключение библиотеки jquery (Набор функций JS, фокусирующийся на взаимодействии JS и HTML) через Google, что-бы не делать доп. запросов на наш сервер -->
+        <script src="{{ url_for('static', filename='js/jquery.fancybox.min.js') }}"></script> <!-- Подключение Fancybox -->
+        <script src="{{ url_for('static', filename='js/main.js') }}"></script> <!-- Подключение своего файла JS -->
+        <script src="{{ url_for('static', filename='js/slick.min.js') }}"></script> <!-- Подключение JS файла слайдера -->
+</body>
+</html>

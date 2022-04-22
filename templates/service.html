@@ -1,0 +1,145 @@
+{% extends 'base.html' %} <!-- подключение к файлу шаблону -->
+
+<!-- заголовок страницы -->
+{% block title %}
+УСЛУГИ
+{% endblock %}
+
+{% block body %}     <!-- основное -->
+
+    <section class="service"> <!-- О услугах и турах -->
+        <div class="container"> <!-- Общий контейнер -->
+            <div class="service_top"> <!-- Вверхняя часть (услуги) -->
+                <div class="service_title_box"> <!-- Содержимое верхней части -->
+                    <div class="service_title"> <!-- Заголовок -->
+                        Наши услуги
+                    </div>
+                    <div class="service_text"> <!-- Текст -->
+                        Мы предоставляем грандиозное двух-дневное путешествие!
+                    </div>
+                </div>
+            </div>
+            <div class="service_items"> <!-- Нижняя часть (туры) -->
+                <div class="service_item"> <!-- Содержимое нижней части -->
+                    <img src="{{ url_for('static', filename='img/16.jpg') }}"> <!-- Картинка -->
+                    <div class="service_item_title"> <!-- Заголовок -->
+                        ~ Тусовки ~
+                    </div>
+                    <div class="service_item_text"> <!-- Текст -->
+                        Большую часть времени мы танцуем, веселимся и великолепно проводим время за общим столом!💃💥
+                    </div>
+                    <div class="service_item_button"> <!-- Кнопки -->
+                        <div class="item-left">
+                            <a data-fancybox data-src="#form_info" href="javascript:;" class="service_item-link">Подробнее</a> <!-- Кнопка информации -->
+                        </div>
+                        <div class="item-right">
+                            <a data-fancybox data-src="#form_reg" href="javascript:;" class="default-button">Заказать тур!!<!-- Кнопка заказа -->
+                            <span class="material-icons md-def">chevron_right</span></a> <!-- Подключение иконки -->
+                        </div>
+                    </div>
+                </div>
+                <div class="service_item"> <!-- Содержимое нижней части -->
+                    <img src="{{ url_for('static', filename='img/19.jpg') }}"> <!-- Картинка -->
+                    <div class="service_item_title"> <!-- Заголовок -->
+                        ~ Экспедиции ~
+                    </div>
+                    <div class="service_item_text"> <!-- Текст -->
+                        В перерывах между тусовками, мы ходим на экспедиции и гуляем по самым интересным местам!⛰👀
+                    </div>
+                    <div class="service_item_button"> <!-- Кнопки -->
+                        <div class="item-left">
+                            <a data-fancybox data-src="#form_info" href="javascript:;" class="service_item-link">Подробнее</a> <!-- Кнопка информации -->
+                        </div>
+                        <div class="item-right">
+                            <a data-fancybox data-src="#form_reg" href="javascript:;" class="default-button">Заказать тур!!<!-- Кнопка заказа -->
+                            <span class="material-icons md-def">chevron_right</span></a> <!-- Подключение иконки -->
+                        </div>
+                    </div>
+                </div>
+                <div class="service_item"> <!-- Содержимое нижней части -->
+                    <img src="{{ url_for('static', filename='img/8.jpg') }}"> <!-- Картинка -->
+                    <div class="service_item_title"> <!-- Заголовок -->
+                        ~ Путешествие в компании ~
+                    </div>
+                    <div class="service_item_text"> <!-- Текст -->
+                        Ну и конечно, всё путешествие вы будете находится в отличной компании и замечательными людьми!🔥⚡
+                    </div>
+                    <div class="service_item_button"> <!-- Кнопки -->
+                        <div class="item-left">
+                            <a data-fancybox data-src="#form_info" href="javascript:;" class="service_item-link">Подробнее</a> <!-- Кнопка информации -->
+                        </div>
+                        <div class="item-right">
+                            <a data-fancybox data-src="#form_reg" href="javascript:;" class="default-button">Заказать тур!!<!-- Кнопка заказа -->
+                            <span class="material-icons md-def">chevron_right</span></a> <!-- Подключение иконки -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="textt">
+        <div class="container"> <!-- Общий контейнер -->
+            <div class="textt_all">
+                <div class="advantages_item">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="advantages"> <!-- Достяжения -->
+        <div class="container"> <!-- Общий контейнер -->
+            <div class="advantages_all"> <!-- Всё о достижениях -->
+                <div class="advantages_item"> <!-- Достяжение -->
+                    <div class="advantages_title_1"> <!-- Заголовок -->
+                    <span class="material-icons md-done">done</span> <!-- Иконка -->
+                        Больше сотни отличных отзывов
+                    </div>
+                    <div class="advantages_text"> <!-- Текст -->
+                        Свыше сотни разных людей, которые с удовольствием провели время в свои выходные!
+                    </div>
+                </div>
+                <div class="advantages_item"> <!-- Достяжение -->
+                    <div class="advantages_title_2"> <!-- Заголовок -->
+                    <span class="material-icons md-done">done</span> <!-- Иконка -->
+                        Отличное времяпрепровождение
+                    </div>
+                    <div class="advantages_text"> <!-- Текст -->
+                        Эти 2 дня будут невероятно крутыми и незабываемыми. Особенно в замечательной компании!
+                    </div>
+                </div>
+                <div class="advantages_item"> <!-- Достяжение -->
+                    <div class="advantages_title_3"> <!-- Заголовок -->
+                    <span class="material-icons md-done">done</span> <!-- Иконка -->
+                        Большой опыт путешествий
+                    </div>
+                    <div class="advantages_text"> <!-- Текст -->
+                        Знаем куда идти, что показать, где попить, поесть, поспать!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="form_info"> <!-- Окно с информацией -->
+        <div class="form_data_1"> <!-- Класс для заголовков -->
+            <h2>Больше информации!!!</h2>
+        </div> 
+        <div class="form_data_2"> <!-- Класс для обычного текста -->
+            О туре, услугах, организации и о многом, многом другом...<Br>
+            Можно узнать, позвонив или написав нам в Instagram/WhatsApp!<Br>
+            Кнопки для связи находятся тут и сверху сайта💥⛰
+        </div> 
+        <div class="form_data_1"> <!-- Класс для заголовков -->
+            <a class="header_tele" href="tel:89889933295">8 (988) 933 32 95
+            <span class="material-icons md-call">call</span></a> <!-- Подключение иконки -->
+            <a class="header_whats" href="https://api.whatsapp.com/send?phone=79889933295&text=Здравствуйте%21%20Понравился%20ваш%20тур%20в%20...">WhatsApp
+            <span class="material-icons md-whatsapp">whatsapp</span></a> <!-- Подключение иконки -->
+            <a class="header_inst" href="https://www.instagram.com/magic_travel.rnd/">Instagram
+            <span class="material-icons md-photo_camera">photo_camera</span></a> <!-- Подключение иконки --> 
+            <a class="header_vk" href="https://vk.com/magic_travel_rnd/">VK
+            <span class="material-icons md-groups">groups</span></a>
+        </div>      
+    </div>
+{% endblock %}

@@ -1,0 +1,619 @@
+*{
+    box-sizing: border-box; /*Применяется для изменения алгоритма расчета ширины и высоты элемента. Свойства width и height включают в себя значения полей и границ, но не отступов (margin).*/
+}
+:root{
+    --a-color: #bad072; /*Основной цвет*/
+    --b-color: #5e5e5e; /*Цвет шрифта*/
+    --c-color: #303030; /*Цвет верхней шапки*/
+    --d-color: #fff; /*Основной цвет 2*/
+    --e-color: #000; /*Основной цвет 3*/
+    --f-color: #e6e6e6; /*Цвет рамки услуг*/
+    --g-color: #f9f9f9; /*Цвет заднего фона услуг*/
+}
+a{
+    text-decoration: none; /*Убирает подчёркивание в тексте*/
+    display: inline-block; /*Для написания в одну строчку*/
+}
+ul,li{
+    list-style: none; /*Убирает вид маркера для каждого элемента списка*/
+    margin: 0; /*Центрирование общего модуля текста*/
+    padding: 0; /*Отступ от краёв*/
+}
+.container{
+    max-width: 1100px; /*Максимальная ширина отновной части сайта*/
+    margin: 0 auto; /*Центрирование общего модуля текста*/
+    padding: 0 15px; /*Отступ от краёв*/
+}
+body{
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'PT Serif', serif; /*Шрифт*/
+    font-weight: 400; /*Толщина шрифта*/
+    font-size: 15px; /*Размер шрифта*/
+    line-height: 18px; /*Высота строки*/
+    color: var(--b-color); /*Цвет шрифта*/
+}
+.header{
+    font-family: 'Roboto', sans-serif; /*Шрифт*/
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 999;
+    box-shadow: 0px 2px 5px 1px rgba(91, 89, 89, 0.14);
+}
+.header_up{
+    background-color: var(--c-color); /*Цвет всей верхней шапки*/
+}
+.header_butt{
+    position: relative; /*Элемент перемещается по файлу имея своё забронированное пространство*/
+    float: right; /*Расположение кнопки справа*/
+    line-height: 36px; /*Высота строки*/
+    font-family: 'Roboto', sans-serif; /*Шрифт*/
+    font-size: 16px; /*Размер шрифта*/
+    padding: 5px 20px 4px 40px; /*Отступы со всех сторон от текста кнопки*/
+    color: var(--e-color); /*Цвет шрифта*/
+    background-color: var(--a-color); /*Цвет задника*/
+    transition: all .3s; /*Время эффекта появления*/
+}
+.header_butt:hover{
+    background-color: var(--d-color); /*Цвет кнопки при наведении*/
+}
+.material-icons.md-work{
+    position: absolute; /*Элемент просто перемещается по файлу не имея своего забронированного пространства*/
+    float: right; /*Размещение иконки справа экрана*/
+    font-size: 16px; /*Размер иконки*/
+    top: 15px; /*Отступ сверху*/
+    left: 12px; /*Отступ справа*/
+    color: var(--e-color); /*Цвет иконки*/
+}
+.contacts:after{
+    content: ""; /*Позволяет вставлять генерируемое содержание в текст веб-страницы, которое первоначально в тексте отсутствует.*/
+    clear: both; /*Отменяет обтекание элемента одновременно с правого и левого края.*/
+    display: block; /*Свойство, которое определяет, как элемент должен быть показан в документе. Элемент показывается как блочный.*/
+}
+.header_vk,
+.header_tele,
+.header_whats,
+.header_inst{
+    position: relative; /*Элемент перемещается по файлу имея своё забронированное пространство*/
+    letter-spacing: 0.25px; /*отступ между буквами*/
+    line-height: 45px; /*Высота строки*/
+    color: #cbcacb; /*Цвет шрифта*/
+}
+.header_vk{
+    padding-left: 30px; /*отступ слева от текста*/
+}
+.material-icons.md-groups{
+    position: absolute; /*Элемент просто перемещается по файлу не имея своего забронированного пространства*/
+    font-size: 16px; /*Размер иконки*/
+    top: 15px; /*Отступ сверху*/
+    left: 6px; /*Отступ справа*/
+    color: var(--a-color); /*Цвет иконки*/
+}
+.header_inst{
+    padding-left: 25px; /*отступ слева от текста*/
+}
+.material-icons.md-photo_camera{
+    position: absolute; /*Элемент просто перемещается по файлу не имея своего забронированного пространства*/
+    font-size: 16px; /*Размер иконки*/
+    top: 15px; /*Отступ сверху*/
+    left: 2.5px; /*Отступ справа*/
+    color: var(--a-color); /*Цвет иконки*/
+}
+.header_whats{
+    padding-left: 10px; /*отступ слева от текста*/
+    padding-right: 10px; /*отступ справа от текста*/
+}
+.material-icons.md-whatsapp{
+    position: absolute; /*Элемент просто перемещается по файлу не имея своего забронированного пространства*/
+    font-size: 16px; /*Размер иконки*/
+    top: 15px; /*Отступ сверху*/
+    left: -13px; /*Отступ справа*/
+    color: var(--a-color); /*Цвет иконки*/
+}
+.header_tele{
+    position: relative; /*Элемент перемещается по файлу имея своё забронированное пространство*/
+    padding-left: 20px; /*отступ слева от текста*/
+    padding-right: 25px; /*отступ справа от текста*/
+}
+.material-icons.md-call{
+    position: absolute; /*Элемент просто перемещается по файлу не имея своего забронированного пространства*/
+    font-size: 16px; /*Размер иконки*/
+    top: 15px; /*Отступ сверху*/
+    left: -1.5px; /*Отступ справа*/
+    color: var(--a-color); /*Цвет иконки*/
+}
+.header_text{
+    position: relative; /*Элемент перемещается по файлу имея своё забронированное пространство*/
+    font-family: 'Roboto', sans-serif; /*Шрифт*/
+    font-size: 20px; /*Размер шрифта*/
+    font-weight: 500; /*Толщина шрифта*/
+    bottom: 40px; /*Отступ снизу*/
+    color: var(--e-color); /*Цвет текста*/
+}
+.header_down{
+    padding: 10px 0px 6.5px; /*Размещение логотипа*/
+}
+.header_down_all{
+    display: flex; /*Свойство позволяет определить div в качестве контейнера:*/
+    justify-content: space-between; /*Определяет, как браузер распределяет пространство вокруг флекс-элементов вдоль главной оси контейнера, Флексы равномерно распределяются по всей строке. Первый и последний элемент прижимаются к соответствующим краям контейнера.*/
+}
+.menu li{
+    display: inline-block; /*Для написания в одну строчку*/
+    padding: 35px 0px 0px 0px; /*Отступы блока кнопок*/
+}
+.menu a{
+    font-size: 16px; /*Размер шрифта*/
+    line-height: 36px; /*Высота строки*/
+    padding: 7px 16px; /*Отступы по бокам от текста*/
+    border: 1px solid transparent; /*Прозрачность рамки*/
+    transition: all .3s; /*Время эффекта появления*/
+    color: var(--e-color); /*Цвет шрифта*/
+}
+.menu a:hover{
+    border-color: var(--a-color); /*Цвет рамки при наведении мыши*/
+}
+.menu li + li{
+    padding-left: 5px; /*Отступы между кнопками*/
+}
+.slider-item{
+    background-repeat: no-repeat; /*Что-бы картинка не множилась как сумасшедшая*/
+    background-size: cover; /*Для того, что-бы картинка расстягивалась*/
+    background-position: center; /*Позиция картинки*/
+    min-height: 500px; /*Минимальная высота*/
+    margin-bottom: 10px; /*Отступ снизу*/
+    position: relative;
+    z-index: 1;
+}
+.slider-item:after{
+    top: 0;
+    left: 0;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #000;
+    opacity: 0.35;
+    z-index: 2;
+}
+.slider_item-content{
+    z-index: 3;
+}
+.slider_item1{
+    background-image: url(../img/6.jpg);
+}
+.slider_item2{
+    background-image: url(../img/9.jpg);
+}   
+.slider_item3{
+    background-image: url(../img/17.jpg);
+}
+.slider_item-content{
+    text-align: center; /*Текст по центру*/
+    margin: 0 auto; /*Центрирование общего модуля текста*/
+    padding-top: 130px; /*Отступ сверху*/
+    max-width: 665px; /*Максимальная ширина*/
+    position: relative;
+}
+.slider_title{
+    text-transform: uppercase; /*Все символы текста становятся прописными*/
+    font-family: 'Roboto', sans-serif; /*Шрифт*/
+    font-size: 30px; /*Размер шрифта*/
+    font-weight: 500; /*Толщина шрифта*/
+    line-height: 36px; /*Высота строки*/
+    letter-spacing: 1.5px; /*Растояние между буквами*/
+    margin-bottom: 22px; /*Отступ от титульника к тексту*/
+    color: var(--d-color); /*Цвет*/
+}
+.slider_text{
+    font-size: 18px; /*Размер шрифта*/
+    line-height: 24px; /*Высота строки*/
+    margin-bottom: 50px; /*Отступ от текста к кнопке*/
+    color: var(--d-color); /*Цвет*/
+}
+.default-button{
+    position: relative; /*Элемент перемещается по файлу имея своё забронированное пространство*/
+    display: inline-block; /*Для написания в одну строчку*/
+    font-family: 'Roboto', sans-serif; /*Шрифт*/
+    font-size: 14px; /*Размер шрифта*/
+    line-height: 24px; /*Высота строки*/
+    font-weight: 500; /*Толщина шрифта*/
+    padding: 8px 24px 8px 24px; /*Отступы со всех сторон текста*/
+    cursor: pointer; /*При наведении мышкой - будет палец*/
+    color: var(--d-color); /*Цвет текста*/
+    border: 1px solid var(--a-color); /*Цвет рамки*/
+    border-right-width: 20px; /*Толщина правой рамки*/
+    margin-bottom: 26px;
+    transition: all .3s; /*Время эффекта появления*/
+    animation: identifier 1.5s infinite;
+}
+@keyframes identifier {
+    0% {
+        box-shadow: 0 0 8px 6px var(--a-color), 0 0 10px 12px var(--a-color);
+    }
+    100% {
+        box-shadow: 0 0 10px 4px rgb(255 48 26 / 0%), 0 0 5px 30px rgb(255 48 26 / 0%);
+    } 
+}
+.default-button:hover{
+    background-color: var(--a-color); /*Цвет кнопки при наведении*/
+    color: var(--e-color); /*Цвет текста при наведении*/
+}
+.material-icons.md-def{
+    position: absolute; /*Элемент просто перемещается по файлу не имея своего забронированного пространства*/
+    font-size: 16px; /*Размер шрифта*/
+    top: 12px; /*Отступ сверху*/
+    right: -17.5px; /*Отступ срава*/
+    color: var(--d-color); /*Цвет иконки*/
+}
+.material-icons.md-def:hover{
+    color: var(--e-color); /*Цвет иконки при наведении*/
+}
+/*.slider_all{
+    position: relative; /*Элемент перемещается по файлу имея своё забронированное пространство*
+}*/
+.slick-button{
+    position: absolute; /*Элемент просто перемещается по файлу не имея своего забронированного пространства*/
+    z-index: 3; /*Каждый элемент может находиться как ниже, так и выше других объектов веб-страницы, их размещением по z-оси и управляет z-index. Чем больше значение, тем выше находится элемент по сравнению с теми элементами, у которых оно меньше.*/
+    top: 50%; /*Отступ самой кнопки сверху*/
+    width: 40px; /*Ширина кнопки*/
+    height: 40px; /*Высота кнопки*/
+    cursor: pointer; /*При наведении мышкой - будет палец*/
+    background-color: transparent; /*Прозрачность кнопок*/
+    transition: all .3s; /*Время эффекта появления*/
+    border: 1px solid var(--d-color); /*Ширина и цвет рамки*/
+}
+.slick-button:hover{
+    background-color: var(--a-color); /*Цвет кнопок при наведении*/
+}
+.slick-button.slick-disabled{
+    cursor: default; /*При наведении мышкой - будет курсор*/
+    opacity: 0; /*Кнопка становится невидимой*/
+}
+.material-icons.md-left{
+    position: absolute; /*Элемент просто перемещается по файлу не имея своего забронированного пространства*/
+    font-size: 16px; /*Размер шрифта*/
+    top: 11px; /*Отступ сверху*/
+    left: 11.5px; /*Отступ слева*/
+    color: var(--d-color); /*Цвет иконки*/
+}
+.material-icons.md-right{
+    position: absolute; /*Элемент просто перемещается по файлу не имея своего забронированного пространства*/
+    font-size: 16px; /*Размер шрифта*/
+    top: 11px; /*Отступ сверху*/
+    left: 11.5px; /*Отступ слева*/
+    color: var(--d-color); /*Цвет иконки*/
+}
+.slick-next{
+    right: 35px; /*Размещение кнопки по середине, а именно ровно в правой стороне*/
+}
+.slick-prev{
+    left: 35px; /*Размещение кнопки по середине, а именно ровно в левой стороне*/
+}
+#form_reg, 
+#form_info{
+    display: none;
+}
+.service{
+    padding: 50px 0px 30px; /*Центрирование текста*/
+}
+.service_top{
+    display: flex; /*Свойство позволяет определить div в качестве контейнера:*/
+    justify-content: space-between; /*Определяет, как браузер распределяет пространство вокруг флекс-элементов вдоль главной оси контейнера, Флексы равномерно распределяются по всей строке. Первый и последний элемент прижимаются к соответствующим краям контейнера.*/
+    margin-bottom: 35px; /*Отступ снизу*/
+}
+.service_title_box{
+    max-width: 690px; /*Место под текст и полосу*/
+    padding-left: 140px; /*Место под полосу*/
+    position: relative; /*Элемент перемещается по файлу имея своё забронированное пространство*/
+}
+.service_title_box:before{
+    content: ""; /*Нужно ставить в Бефоре для работоспособности*/
+    position: absolute; /*Элемент просто перемещается по файлу не имея своего забронированного пространства*/
+    width: 100px; /*Ширина полосы*/
+    height: 2px; /*Высота полосы*/
+    background-color: var(--a-color); /*Цвет полосы*/
+    left: 0; /*Место полосы*/
+    top: 11px; /*Отступ сверху*/
+}
+.service_title{
+    font-size: 24px; /*Размер шрифта*/
+    font-weight: 500; /*Толщина шрифта*/
+    line-height: 24px; /*Высота строки*/
+    color: var(--e-color); /*Цвет шрифта*/
+    font-family: 'Roboto', sans-serif; /*Шрифт*/
+    margin-bottom: 10px; /*Отступ от текста*/
+}
+.service_text{
+    letter-spacing: 0.1px; /*Разрыв между символами*/
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 250;
+    line-height: 20px;
+}
+.service_button a{
+    line-height: 24px; /*Высота строки*/
+    letter-spacing: 0.25px; /*Разрыв между символами*/
+    padding: 5px 38px; /*Отступы до рамки*/
+    border: 3px solid var(--f-color); /*Ширина и цвет рамки*/
+}
+.service_items{
+    display: flex; /*Свойство позволяет определить div в качестве контейнера:*/
+    justify-content: space-between; /*Определяет, как браузер распределяет пространство вокруг флекс-элементов вдоль главной оси контейнера, Флексы равномерно распределяются по всей строке. Первый и последний элемент прижимаются к соответствующим краям контейнера.*/
+}
+.service_item{
+    max-width: calc(33% - 10px); /*Максимальная ширина*/
+    text-align: center; /*Текст по центру*/
+    padding: 30px 0px 30px; /*Отступы сверху и снизу*/
+    position: relative; /*Элемент перемещается по файлу имея своё забронированное пространство*/
+    min-height: 375px; /*Минимальная высота*/
+    background-color: var(--g-color); /*Цвет заднего фона*/
+    box-shadow: 0px 7px 24.3px 2.7px rgba(91, 89, 89, 0.14); /*Тени*/
+    display: flex;
+    flex-direction: column;
+}
+.service_item_title{
+    color: var(--e-color); /*Цвет текста*/
+    font-size: 18px; /*Размер шрифта*/
+    line-height: 24px; /*Высота строки*/
+    font-weight: 500; /*Толщина шрифта*/
+    font-family: 'Roboto', sans-serif; /*Шрифт*/
+    padding: 24px 0; /*Отступ сверху*/
+}
+.service_item_text{
+    font-size: 15px;
+    letter-spacing: 0.1px; /*Растояние между символами*/
+    padding: 0px 30px 30px; /*Отступ слева и снизу*/
+}
+.service_item_button{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 30px;
+}
+.service_item_button .item-right{
+    width: calc(65% - 10px);
+}
+.service_item_button .item-left{
+    width: calc(35% - 10px);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.service_item_button .item-left a{
+    margin-bottom: 30px;
+}
+.service_item_button .default-button{
+    color: var(--e-color); /*Цвет шрифта для этой кнопки*/
+}
+.service_item_button .default-button:hover{
+    background-color: var(--a-color); /*Цвет кнопки при наведении*/
+    color: var(--d-color); /*Цвет текста при наведении*/
+}
+.service_item-link{
+    color: var(--e-color); /*Цвет шрифта*/
+    font-family: 'Roboto', sans-serif; /*Шрифт*/
+    border-bottom: 1px solid var(--e-color); /*Ширина и цвет подчёркивания*/
+    max-width: 77px;
+}
+.about{
+    background-image: url(../img/about-fon3.jpg); /*Задний фон*/
+    background-size: cover; /*Для того, что-бы картинка расстягивалась*/
+    background-position: center; /*Позиция картинки*/
+    min-height: 300px; /*Минимальная высота*/
+    background-repeat: no-repeat; /*Без повторов заднего фото*/
+    padding: 25px, 0px, 45px; /*Отступы сверху и снизу*/
+    position: relative;
+    z-index: 1;
+}
+.about:after{
+    top: 0;
+    left: 0;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #000;
+    opacity: 0.50;
+    z-index: -1;
+}
+.about_title{
+    padding: 38px 0px 39px; /*Отступы сверху и снизу*/
+    font-style: 24px;
+    font-size: 30px; /*Размер шрифта*/
+    line-height: 34px; /*Высота строки*/
+    color: var(--d-color); /*Цвет*/
+    font-weight: 500; /*Толщина шрифта*/
+    font-family: 'Roboto', sans-serif; /*Шрифт*/
+    z-index: 2;
+}
+.about_text{
+    margin-bottom: 39px; /*Отступ снизу*/
+    letter-spacing: 0.1px; /*Растояние между символами*/
+    line-height: 24px; /*Высота строки*/
+    color: var(--d-color); /*Цвет шрифта*/
+    font-family: 'Roboto', sans-serif; /*Шрифт*/
+    z-index: 2;
+}
+.about_all .default-button{
+    background-color: var(--d-color); /*Цвет заднего фона кнопки*/
+    color: var(--e-color); /*Цвет шрифта*/
+    z-index: 2;
+}
+.about_all .default-button:hover{
+    background-color: transparent; /*Прозрачность при наведении*/
+    color: var(--d-color) /*Цвет шрифта*/
+}
+.form_data_1{
+    line-height: 36px; /*Высота строки*/
+    font-family: 'Roboto', sans-serif; /*Шрифт*/
+    font-size: 16px; /*Размер шрифта*/
+    color: var(--e-color); /*Цвет шрифта*/
+    font-weight: 500;
+}
+.form_data_2{
+    line-height: 25px; /*Высота строки*/
+    font-size: 18px; /*Размер шрифта*/
+    color: var(--e-color); /*Цвет шрифта*/
+    margin-bottom: 25px; /*Отступ снизу*/
+}
+.form_data_1 .header_tele, .form_data_1 .header_whats, .form_data_1 .header_inst, .form_data_1 .header_vk{
+    color: var(--e-color); /*Цвет шрифта для отдельного окна*/
+}
+.advantages{
+    padding: 55px 0px 40px; /*Отступы сверху и снизу*/
+    background-image: url(../img/advantages-fon.jpg); /*Задняя картинка*/
+    background-size: cover; /*Для того, что-бы картинка расстягивалась*/
+    background-position: center; /*Позиция картинки*/
+    min-height: 285px; /*Минимальная высота*/
+    background-repeat: no-repeat; /*Без повторов заднего фото*/
+    position: relative;
+    z-index: 1;
+}
+.advantages:after{
+    top: 0;
+    left: 0;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #000;
+    opacity: 0.50;
+    z-index: 2;
+}
+.advantages_all{
+    color: var(--d-color); /*Цвет шрифта*/
+    display: flex; /*Свойство позволяет определить div в качестве контейнера:*/
+    justify-content: space-between; /*Определяет, как браузер распределяет пространство вокруг флекс-элементов вдоль главной оси контейнера, Флексы равномерно распределяются по всей строке. Первый и последний элемент прижимаются к соответствующим краям контейнера.*/
+}
+.advantages_item{
+    max-width: 360px; /*Максимальная ширина блока*/
+    padding: 10px 30px; /*Отступ сверху и слева*/
+    z-index: 3;
+}
+.advantages_title_1,
+.advantages_title_2,
+.advantages_title_3{
+    font-family: 'Roboto', sans-serif; /*Шрифт*/
+    font-size: 18px; /*Размер шрифта*/
+    line-height: 24px; /*Высота строки*/
+    font-weight: 500; /*Толщина шрифта*/
+    padding: 60px 0px 15px; /*Отсутп сверху и снизу*/
+    position: relative; /*Элемент перемещается по файлу имея своё забронированное пространство*/
+}
+.advantages_text{
+    font-family: 'Roboto', sans-serif; /*Шрифт*/
+    line-height: 24px; /*Высота строки*/
+    color: var(--d-color); /*Цвет шрифта*/
+    letter-spacing: 0.1px; /*Растояние между символами*/
+}
+.material-icons.md-done{
+    content: "";
+    width: 40px; /*Ширина квадрата*/
+    height: 40px; /*Высота квадрата*/
+    border: 2px solid var(--a-color); /*рамка квадрата*/
+    transform: translateX(-100%); /*Передвижение обхекта по оси Х*/
+    position: absolute; /*Элемент просто перемещается по файлу не имея своего забронированного пространства*/
+    font-size: 16px; /*Размер шрифта*/
+    top: 0px;  /*Отступ сверху*/
+    left: 130px;  /*Отступ слева*/
+    color: var(--d-color); /*Цвет шрифта*/
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+.form_data_btn{
+    background-color: var(--a-color); /*Цвет задника*/
+}
+.footer_copy{
+    background-color: #303030; /*Цвет задника*/
+    text-align: center; /*Текст по центру*/
+    font-size: 12px; /*Размер шрифта*/
+    line-height: 24px; /*Высота строки*/
+    padding: 8px 0; /*Отступ*/
+    font-weight: 400; /*Толщина шрифта*/
+    font-family: 'Roboto', sans-serif; /*Шрифт*/
+}
+.textt_zag{
+    font-size: 26px; /*Размер шрифта*/
+    font-weight: 500; /*Толщина шрифта*/
+    line-height: 26px; /*Высота строки*/
+    color: var(--e-color); /*Цвет шрифта*/
+    font-family: 'Roboto', sans-serif; /*Шрифт*/
+    margin-bottom: 10px; /*Отступ от текста*/
+    text-align: center;
+    margin-top: 30px;
+}
+.textt_title{
+    font-size: 24px; /*Размер шрифта*/
+    font-weight: 500; /*Толщина шрифта*/
+    line-height: 24px; /*Высота строки*/
+    color: var(--e-color); /*Цвет шрифта*/
+    font-family: 'Roboto', sans-serif; /*Шрифт*/
+    margin-bottom: 15px; /*Отступ от текста*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.textt_title:after{
+    content: "";
+    display: flex;
+    width: 24px;
+    height: 24px;
+    background-color: var(--e-color);
+    mask-image: url(../img/expand.svg);
+    mask-size: contain;
+    -webkit-mask-image: url(../img/expand.svg);
+    -webkit-mask-size: contain;
+}
+.textt_title:hover::after{
+    background-color: var(--a-color);  
+}
+.textt_title:hover{
+    color: var(--a-color);
+}
+.textt_title, .textt_title:hover, .textt_title:after{
+    transition: all 0.2s ease-in-out;
+
+}
+.textt_item{
+    max-width: 1020px; /*Место под текст и полосу*/
+    padding-left: 140px; /*Место под полосу*/
+    position: relative; /*Элемент перемещается по файлу имея своё забронированное пространство*/
+    top: 20px;
+    margin-bottom: 30px;
+}
+.textt_item:before{
+    content: ""; /*Нужно ставить в Бефоре для работоспособности*/
+    position: absolute; /*Элемент просто перемещается по файлу не имея своего забронированного пространства*/
+    width: 100px; /*Ширина полосы*/
+    height: 2px; /*Высота полосы*/
+    background-color: var(--a-color); /*Цвет полосы*/
+    left: 0; /*Место полосы*/
+    top: 11px; /*Отступ сверху*/
+}
+.textt_text{
+    letter-spacing: 0.1px; /*Разрыв между символами*/
+    margin-bottom: 35px; /*Отступ от текста*/
+    font-size: 20px; /*Размер шрифта*/
+    font-weight: 250; /*Толщина шрифта*/
+    line-height: 20px; /*Высота строки*/
+}
+.textt_but{
+    margin-top: 50px;
+    margin-bottom: 35px;
+}
+.textt_but .default-button{
+    display: block;
+    color:var(--e-color);
+    width: calc(100% - 70px);
+    margin: 0px auto;
+    text-align: center;
+}
+.service_item-link2{
+    color: var(--e-color); /*Цвет шрифта*/
+    font-family: 'Roboto', sans-serif; /*Шрифт*/
+    border-bottom: 1px solid var(--e-color); /*Ширина и цвет подчёркивания*/
+}
